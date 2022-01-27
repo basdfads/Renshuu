@@ -30,20 +30,20 @@ def arith(x):
         del x[add-1:add+2]
         x.insert(add-1, str(addre))
         
-    return x
+    return float(x[0])
 
 
-adv=[]
 
 while '(' in comp:
     pars = comp.index('(')
     parc = comp.index(')')
-    adv.append(comp[pars+1:parc])
-    adva = arith(adv[0])
+    adv = comp[pars+1:parc]
+    print(adv)
+    adva = arith(adv)
+    print(adva)
     del comp[pars:parc+1]
-    comp.insert(pars, adva[0])
-    del adv[0]
-    
-y = arith(comp)
-ans = float(y[0])
+    comp.insert(pars, adva)
+    del adv
+  
+ans = arith(comp)
 print('결과 :', ans)
