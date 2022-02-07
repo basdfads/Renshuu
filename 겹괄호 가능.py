@@ -101,7 +101,7 @@ def n_par(x):                                             # 첫 번째 ')' 가 �
 def par(x):                                               # 가장 우선적으로 계산할 괄호 내 수식을 계산하고 그 값을 해당 위치에 반환, 괄호 제거
     par = x[n_par(x)[0]+1:n_par(x)[1]]
     paa = arith(par)
-    x.insert(n_par(x)[1]+1, int(paa))
+    x.insert(n_par(x)[1]+1, float(paa))
     del x[n_par(x)[0]:n_par(x)[1]+1]
     return x
 
